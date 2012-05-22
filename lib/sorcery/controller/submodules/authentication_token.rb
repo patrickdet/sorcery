@@ -12,12 +12,9 @@ module Sorcery
           protected
 
           def login_from_authentication_token
-            user = params[:auth_token] && user_class.find_by_authentication_token(params[:auth_token])
-            if user
-              @current_user = user
-            else
-              @current_user = false
-            end
+            @current_user = (user_class.find_by_authentication_token(params[:auth_token]) if params[:auth_token] || false
+            auto_login(@current_user) if @current_user
+            @current_user
           end
         end
       end
