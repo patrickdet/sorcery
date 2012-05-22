@@ -25,6 +25,7 @@ module Sorcery
       autoload :HttpBasicAuth, 'sorcery/controller/submodules/http_basic_auth'
       autoload :ActivityLogging, 'sorcery/controller/submodules/activity_logging'
       autoload :External, 'sorcery/controller/submodules/external'
+      autoload :TokenAuthentication, 'sorcery/controller/submodules/token_authentication'
       module External
         module Protocols
           autoload :Oauth1, 'sorcery/controller/submodules/external/protocols/oauth1'
